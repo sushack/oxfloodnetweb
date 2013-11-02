@@ -42,7 +42,10 @@ def return_data(**kwargs):
         ),
         'api_key': oxfloodnet.config['FLOOD_DATA_API_KEY'],
     }
-    r = requests.get(api_url, params = params)
+    s = requests.Session()
+    s.mount('http://', CachingHTTPAdapter())
+    s.mount('https://', CachingHTTPAdapter())
+    r = s.get(api_url, params = params)
     return flask.json.jsonify(request = request, data = r.json())
 
 @oxfloodnet.route('/test/distance/<a>/<b>')
