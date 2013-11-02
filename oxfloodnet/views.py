@@ -13,14 +13,6 @@ def index():
     """
     return flask.render_template('index.html')
 
-@oxfloodnet.route('/test/boundingbox/<centre>/<sw>/<ne>')
-def return_request(**kwargs):
-    """
-    Return JSON data based on bounding box
-    """
-    request = dict([(i,calc.parse_latlon(j)) for (i,j) in kwargs.items()])
-    return flask.json.jsonify(request = request)
-
 @oxfloodnet.route('/data/<centre>/<sw>/<ne>')
 def return_data(**kwargs):
     """
@@ -28,6 +20,27 @@ def return_data(**kwargs):
     """
     request = dict([(i,calc.parse_latlon(j)) for (i,j) in kwargs.items()])
     return flask.json.jsonify(request = request, data = {})
+
+@oxfloodnet.route('/test/boundingbox/<centre>/<sw>/<ne>')
+def return_parsed_request(**kwargs):
+    """
+    Parse a bounding box URL similar to the /data call
+    """
+    request = dict([(i,calc.parse_latlon(j)) for (i,j) in kwargs.items()])
+    return flask.json.jsonify(request = request)
+
+@oxfloodnet.route('/test/data/<centre>/<sw>/<ne>')
+def return_test_data(**kwargs):
+    """
+    Return example JSON data based on bounding box
+    """
+    request = dict([(i,calc.parse_latlon(j)) for (i,j) in kwargs.items()])
+    test_data = (
+      {'lat': 51.7761, 'lon': -1.264, 'value': 1.0},
+      {'lat': 51.7763, 'lon': -1.263, 'value': 0.7},
+      {'lat': 51.7765, 'lon': -1.265, 'value': 1.2},
+    )
+    return flask.json.jsonify(request = request, data = test_data)
 
 @oxfloodnet.route('/test/distance/<a>/<b>')
 def return_a_to_b(**kwargs):
