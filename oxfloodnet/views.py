@@ -62,8 +62,11 @@ def _parse_result(r):
     data = {"FloodRisk": 1, "Level": 0}
     for stream in r["datastreams"]:
         data[stream["id"]] = float(stream["current_value"])
-    return {'lat': r["location"]['lat'], 'lon': r["location"]['lon'],
-            'value': data["Level"] / data["FloodRisk"]}
+    return {
+        'lat': r["location"]['lat'],
+        'lon': r["location"]['lon'],
+        'value': data["Level"] / data["FloodRisk"],
+    }
 
 @oxfloodnet.route('/test/boundingbox/<centre>/<sw>/<ne>')
 def return_parsed_request(**kwargs):
