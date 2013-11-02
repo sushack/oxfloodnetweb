@@ -6,6 +6,11 @@ body {
 html, body, #map {
     height: 100%;
 }
+body {
+    background-image: url(../img/loader.gif);
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+}
 .navbar {
     position: fixed;
     z-index: 10000;
@@ -17,6 +22,10 @@ html, body, #map {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
+
+    -moz-box-shadow: 0 0 10px rgba(0,0,0,.4);
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,.4);
+    box-shadow: 0 0 10px rgba(0,0,0,.4);
 }
 .navbar a {
     text-decoration: none;
