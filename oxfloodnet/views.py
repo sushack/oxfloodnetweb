@@ -14,12 +14,12 @@ def index():
     """
     return flask.render_template('index.html')
 
-@oxfloodnet.route('/data/<sw>/<ne>')
-def return_data(ne, sw):
+@oxfloodnet.route('/data/<centre>/<sw>/<ne>')
+def return_data(centre, sw, ne):
     """
     Return JSON data based on bounding box
     """
-    return flask.json.jsonify(request = {'sw': parse.parse_latlon(sw), 'ne': parse.parse_latlon(ne)})
+    return flask.json.jsonify(request = {'centre': parse.parse_latlon(centre), 'sw': parse.parse_latlon(sw), 'ne': parse.parse_latlon(ne)})
 
 @oxfloodnet.errorhandler(parse.MalformedLatLon)
 def handle_invalid_latlon(error):
