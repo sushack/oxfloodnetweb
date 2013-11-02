@@ -4,6 +4,9 @@
 # Routing for oxfloodnet
 
 import flask
+from httpcache import CachingHTTPAdapter
+import requests
+
 from oxfloodnet import oxfloodnet, calc
 
 @oxfloodnet.route('/')
@@ -27,7 +30,20 @@ def return_data(**kwargs):
     Return JSON data based on bounding box
     """
     request = dict([(i,calc.parse_latlon(j)) for (i,j) in kwargs.items()])
-    return flask.json.jsonify(request = request, data = {})
+
+    api_url = oxfloodnet.config['FLOOD_DATA_API_URL']
+    params = {
+        'lat': request['centre'][0],
+        'lon': request['centre'][1],
+        'radius': calc.best_circle_radius(
+            request['centre'],
+            request['sw'],
+            request['ne']
+        ),
+        'api_key': oxfloodnet.config['FLOOD_DATA_API_KEY'],
+    }
+    r = requests.get(api_url, params = params)
+    return flask.json.jsonify(request = request, data = r.json())
 
 @oxfloodnet.route('/test/distance/<a>/<b>')
 def return_a_to_b(**kwargs):

@@ -12,4 +12,8 @@ oxfloodnet.jinja_env.globals['static'] = (
 	lambda filename: url_for('static', filename = filename)
 )
 
+# Data source config
+oxfloodnet.config['FLOOD_DATA_API_URL'] = os.environ['FLOOD_DATA_API_URL']
+oxfloodnet.config['FLOOD_DATA_API_KEY'] = os.environ['FLOOD_DATA_API_KEY']
+
 from oxfloodnet import views
