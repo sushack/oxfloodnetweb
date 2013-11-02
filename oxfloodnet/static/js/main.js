@@ -51,27 +51,36 @@ var generate_heatmap = function(map, data) {
         },
         opacity: 0.5,
         gradient: {
-            0.1: 'rgb(255,0,0)',
-            0.2: 'rgb(255,0,0)',
-            0.3: 'rgb(255,0,0)',
-            0.4: 'rgb(255,0,0)',
-            0.5: 'rgb(255,0,0)',
-            0.6: 'rgb(255,0,0)',
-            0.7: 'rgb(255,0,0)',
-            0.8: 'rgb(255,0,0)',
-            0.9: 'rgb(255,0,0)',
+            0.45: 'rgb(0,255,0)',
+            0.65: 'rgb(64,192,0)',
+            0.75: 'rgb(192,64,0)',
             1.0: 'rgb(255,0,0)'
         }
     });
 
     heatmapLayer.setData(data);
 
-    map.addLayer(heatmapLayer);
+    for (var i = 0; i < data.length; i++) {
+      var datum = data[i];
+      var color = 'green';
+      if (datum.value > 0.4) {
+        color = 'yellow';
+      }
+      if (datum.value > 0.8) {
+        color = 'red';
+      }
+      var m = L.circle([datum.lat, datum.lon], 200, {
+        color: color,
+        fillColor: color,
+        fillOpacity: 0.5
+      }).addTo(map);
+    }
+    //map.addLayer(heatmapLayer);
 };
 var send_location = function (map) {
     var bounds = map.getBounds();
     var latlng = map.getCenter();
-    var url = '/data/'+latlng.lat+','+latlng.lng+'/'+bounds._southWest.lat+','+bounds._southWest.lng+'/'+bounds._northEast.lat+','+bounds._northEast.lng+'?test=foo';
+    var url = '/data/'+latlng.lat+','+latlng.lng+'/'+bounds._southWest.lat+','+bounds._southWest.lng+'/'+bounds._northEast.lat+','+bounds._northEast.lng;
     $.ajax({
         url: url
     }).done(function (data){

@@ -22,21 +22,15 @@ def return_data(**kwargs):
     Return JSON data based on bounding box
     """
     request = dict([(i,calc.parse_latlon(j)) for (i,j) in kwargs.items()])
-    api_url = oxfloodnet.config['FLOOD_DATA_API_URL']
+    api_url = "https://benjaminbenben.cloudant.com/floodnet/_design/oxflood/_view/full"
+
     params = {
-        'lat': request['centre'][0],
-        'lon': request['centre'][1],
-        'radius': calc.best_circle_radius(
-            request['centre'],
-            request['sw'],
-            request['ne']
-        ),
-        'api_key': oxfloodnet.config['FLOOD_DATA_API_KEY'],
-        'tag': 'oxflood',
+        'descending': 'true',
+        'limit': '1',
     }
     s = requests.Session()
-    s.mount('http://', CachingHTTPAdapter())
-    s.mount('https://', CachingHTTPAdapter())
+    #s.mount('http://', CachingHTTPAdapter())
+    #s.mount('https://', CachingHTTPAdapter())
 
     # Test data?
     if flask.request.args.get('test'):
@@ -48,7 +42,7 @@ def return_data(**kwargs):
     # Map data into format suitable for heat maps
     data = [_parse_result(r)
       # Test data needs filtering by tags
-      for r in raw_data["results"] if r.has_key('tags') and 'flood' in r['tags']]
+      for r in raw_data["rows"] ]
 
     return flask.json.jsonify(request = request, data = data)
 
@@ -59,13 +53,13 @@ def _parse_result(r):
 
     # One Xyvely result should have multiple streams, representing the current
     # river level and a hardcoded FloodRisk level
-    data = {"FloodRisk": 1, "Level": 0}
-    for stream in r["datastreams"]:
-        data[stream["id"]] = float(stream["current_value"])
+    data = {"R1_RIVR_threshold": 1, "R1_RIVR": 0}
+    for stream in r["value"]["datastreams"]:
+        data[stream["id"]] = float(stream["datapoints"][0]["value"])
     return {
-        'lat': r["location"]['lat'],
-        'lon': r["location"]['lon'],
-        'value': data["Level"] / data["FloodRisk"],
+        'lat': r["value"]["location"]['lat'],
+        'lon': r["value"]["location"]['lon'],
+        'value': data["R1_RIVR"] / data["R1_RIVR_threshold"],
     }
 
 @oxfloodnet.route('/test/boundingbox/<centre>/<sw>/<ne>')
