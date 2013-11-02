@@ -11,16 +11,16 @@
  */
 
  L.TileLayer.HeatMap = L.TileLayer.Canvas.extend({
-	options: {
+    options: {
         debug: false,
         opacity: 0.9,  // opactity is between 0 and 1, not in percent
         radius: {
             value: 20,
             absolute: false  // true: radius in meters, false: radius in pixels
         }
-	},
+    },
 
-	initialize: function (options, data) {
+    initialize: function (options, data) {
         var self = this;
         L.Util.setOptions(this, options);
 
@@ -194,11 +194,13 @@
             "gradient": options.gradient,
             "debug": options.debug
         });
-
+        console.log(sePoint);
+        console.log(nwPoint);
         // padding
         var pad = new L.Point(radiusValue, radiusValue);
         nwPoint = nwPoint.subtract(pad);
         sePoint = sePoint.add(pad);
+
 
         var bounds = new L.LatLngBounds(this._map.unproject(sePoint), this._map.unproject(nwPoint));
         this._quad.retrieveInBounds(this._boundsToQuery(bounds)).forEach(function(obj) {

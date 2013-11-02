@@ -28,13 +28,7 @@ var show_map = function (position) {
 
     var map = L.map('map', {
         center: latlng,
-        zoom: 20,
-        dragging: false,
-        scrollWheelZoom: false,
-        doubleClickZoom: false,
-        boxZoom: false,
-        touchZoom: false,
-        zoomControl: false
+        zoom: 13
     });
     var googleLayer = new L.Google('TERRAIN');
     map.addLayer(googleLayer);
@@ -48,19 +42,28 @@ var handle_status = function (status) {
     if (status.code === 1) {
         $('.error').show();
     }
-}
+};
 var generate_heatmap = function(map, data) {
     var heatmapLayer = L.TileLayer.heatMap({
-        radius: 20,
-        opacity: 0.8,
+        radius: {
+            value: 200,
+            absolute: true  // true: radius in meters, false: radius in pixels
+        },
+        opacity: 0.5,
         gradient: {
-            0.45: 'rgb(0,0,255)',
-            0.55: 'rgb(0,255,255)',
-            0.65: 'rgb(0,255,0)',
-            0.95: 'yellow',
+            0.1: 'rgb(255,0,0)',
+            0.2: 'rgb(255,0,0)',
+            0.3: 'rgb(255,0,0)',
+            0.4: 'rgb(255,0,0)',
+            0.5: 'rgb(255,0,0)',
+            0.6: 'rgb(255,0,0)',
+            0.7: 'rgb(255,0,0)',
+            0.8: 'rgb(255,0,0)',
+            0.9: 'rgb(255,0,0)',
             1.0: 'rgb(255,0,0)'
         }
     });
+
     heatmapLayer.setData(data);
 
     map.addLayer(heatmapLayer);
@@ -68,8 +71,7 @@ var generate_heatmap = function(map, data) {
 var send_location = function (map) {
     var bounds = map.getBounds();
     var latlng = map.getCenter();
-    var url = '/test/data/'+latlng.lat+','+latlng.lng+'/'+bounds._southWest.lat+','+bounds._southWest.lng+'/'+bounds._northEast.lat+','+bounds._northEast.lng;
-
+    var url = '/data/'+latlng.lat+','+latlng.lng+'/'+bounds._southWest.lat+','+bounds._southWest.lng+'/'+bounds._northEast.lat+','+bounds._northEast.lng+'?test=foo';
     $.ajax({
         url: url
     }).done(function (data){
