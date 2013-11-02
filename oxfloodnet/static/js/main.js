@@ -33,7 +33,8 @@ var show_map = function (position) {
         scrollWheelZoom: false,
         doubleClickZoom: false,
         boxZoom: false,
-        touchZoom: false
+        touchZoom: false,
+        zoomControl: false
     });
     var googleLayer = new L.Google('TERRAIN');
     map.addLayer(googleLayer);
