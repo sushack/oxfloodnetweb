@@ -12,4 +12,11 @@ oxfloodnet.jinja_env.globals['static'] = (
 	lambda filename: url_for('static', filename = filename)
 )
 
+# Data source config
+try:
+    oxfloodnet.config['FLOOD_DATA_API_URL'] = os.environ['FLOOD_DATA_API_URL']
+    oxfloodnet.config['FLOOD_DATA_API_KEY'] = os.environ['FLOOD_DATA_API_KEY']
+except KeyError, e:
+    raise Exception, "You must define the environment variable %s before running, with e.g. 'export %s=...'" % (e,e)
+
 from oxfloodnet import views

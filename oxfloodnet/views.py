@@ -4,6 +4,9 @@
 # Routing for oxfloodnet
 
 import flask
+from httpcache import CachingHTTPAdapter
+import requests
+
 from oxfloodnet import oxfloodnet, calc
 
 @oxfloodnet.route('/')
@@ -19,7 +22,23 @@ def return_data(**kwargs):
     Return JSON data based on bounding box
     """
     request = dict([(i,calc.parse_latlon(j)) for (i,j) in kwargs.items()])
-    return flask.json.jsonify(request = request, data = {})
+    api_url = oxfloodnet.config['FLOOD_DATA_API_URL']
+    params = {
+        'lat': request['centre'][0],
+        'lon': request['centre'][1],
+        'radius': calc.best_circle_radius(
+            request['centre'],
+            request['sw'],
+            request['ne']
+        ),
+        'api_key': oxfloodnet.config['FLOOD_DATA_API_KEY'],
+        'tag': 'oxflood',
+    }
+    s = requests.Session()
+    s.mount('http://', CachingHTTPAdapter())
+    s.mount('https://', CachingHTTPAdapter())
+    r = s.get(api_url, params = params)
+    return flask.json.jsonify(request = request, data = r.json())
 
 @oxfloodnet.route('/test/boundingbox/<centre>/<sw>/<ne>')
 def return_parsed_request(**kwargs):
@@ -35,6 +54,7 @@ def return_test_data(**kwargs):
     Return example JSON data based on bounding box
     """
     request = dict([(i,calc.parse_latlon(j)) for (i,j) in kwargs.items()])
+
     test_data = (
       {'lat': 51.7761, 'lon': -1.264, 'value': 1.0},
       {'lat': 51.7763, 'lon': -1.263, 'value': 0.7},
