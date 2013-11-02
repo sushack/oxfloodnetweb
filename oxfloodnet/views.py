@@ -46,13 +46,24 @@ def return_data(**kwargs):
         raw_data = s.get(api_url, params = params).json()
 
     # Map data into format suitable for heat maps
-    data = [{'lat': r["location"]['lat'], 'lon': r["location"]['lon'],
-             'value': float(r["datastreams"][0]['current_value']) /
-                      float(r["datastreams"][0]['max_value'])}
+    data = [_parse_result(r)
       # Test data needs filtering by tags
-      for r in raw_data["results"] if r.has_key('tags') and 'oxflood' in r['tags']]
+      for r in raw_data["results"] if r.has_key('tags') and 'flood' in r['tags']]
 
     return flask.json.jsonify(request = request, data = data)
+
+def _parse_result(r):
+    """
+    Map a single Xyvely result into a heatmap-friendly result
+    """
+
+    # One Xyvely result should have multiple streams, representing the current
+    # river level and a hardcoded FloodRisk level
+    data = {"FloodRisk": 1, "Level": 0}
+    for stream in r["datastreams"]:
+        data[stream["id"]] = float(stream["current_value"])
+    return {'lat': r["location"]['lat'], 'lon': r["location"]['lon'],
+            'value': data["Level"] / data["FloodRisk"]}
 
 @oxfloodnet.route('/test/boundingbox/<centre>/<sw>/<ne>')
 def return_parsed_request(**kwargs):
