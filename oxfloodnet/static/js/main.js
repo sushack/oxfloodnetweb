@@ -10,7 +10,7 @@ $('.non-geo-form a').on('click', function (e){
 
     $('.non-geo-switch').show();
     $('.non-geo-form').hide();
-})
+});
 
 var get_location = function () {
     if (Modernizr.geolocation) {
