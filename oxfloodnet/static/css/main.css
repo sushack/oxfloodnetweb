@@ -6,6 +6,11 @@ body {
 html, body, #map {
     height: 100%;
 }
+body {
+    background-image: url(../img/loader.gif);
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+}
 .navbar {
     position: fixed;
     z-index: 10000;
