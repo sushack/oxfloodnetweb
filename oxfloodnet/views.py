@@ -37,8 +37,22 @@ def return_data(**kwargs):
     s = requests.Session()
     s.mount('http://', CachingHTTPAdapter())
     s.mount('https://', CachingHTTPAdapter())
-    r = s.get(api_url, params = params)
-    return flask.json.jsonify(request = request, data = r.json())
+
+    # Test data?
+    if flask.request.args.get('test'):
+        import json, os
+        raw_data = json.load(open(os.path.dirname(__file__) + "/test_data/example.json"))
+    else:
+        raw_data = s.get(api_url, params = params).json()
+
+    # Map data into format suitable for heat maps
+    data = [{'lat': r["location"]['lat'], 'lon': r["location"]['lon'],
+             'value': float(r["datastreams"][0]['current_value']) /
+                      float(r["datastreams"][0]['max_value'])}
+      # Test data needs filtering by tags
+      for r in raw_data["results"] if r.has_key('tags') and 'oxflood' in r['tags']]
+
+    return flask.json.jsonify(request = request, data = data)
 
 @oxfloodnet.route('/test/boundingbox/<centre>/<sw>/<ne>')
 def return_parsed_request(**kwargs):

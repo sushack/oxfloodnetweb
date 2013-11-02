@@ -1,0 +1,974 @@
+{
+    "itemsPerPage": 100,
+    "results": [
+      {
+        "created": "2010-04-13T23:02:34.336880Z",
+        "creator": "https://xively.com/users/adambloch",
+        "datastreams": [
+          {
+            "at": "2010-04-13T23:04:21.275591Z",
+            "current_value": "12.07",
+            "id": "0",
+            "max_value": "100.0",
+            "min_value": "0.0",
+            "tags": [
+              "temperature"
+            ],
+            "unit": {
+              "label": "Celsius",
+              "symbol": "\u00b0C"
+            }
+          },
+          {
+            "at": "2010-04-13T23:04:21.297900Z",
+            "current_value": "51.7659",
+            "id": "1",
+            "max_value": "51.7659",
+            "min_value": "51.7659",
+            "tags": [
+              "lat",
+              "latitude"
+            ]
+          },
+          {
+            "at": "2010-04-13T23:04:21.319732Z",
+            "current_value": "-1.25682",
+            "id": "2",
+            "max_value": "-1.25682",
+            "min_value": "-1.25682",
+            "tags": [
+              "lon",
+              "longitude"
+            ]
+          },
+          {
+            "at": "2010-04-13T23:04:21.455712Z",
+            "current_value": "0",
+            "id": "3",
+            "max_value": "0.0",
+            "min_value": "0.0",
+            "tags": [
+              "alt",
+              "altitude",
+              "elevation"
+            ]
+          }
+        ],
+        "description": "This feed was created using Data Logger for iPhone.",
+        "feed": "https://api.xively.com/v2/feeds/6762.json",
+        "id": 6762,
+        "location": {
+          "disposition": "mobile",
+          "domain": "physical",
+          "ele": "0",
+          "exposure": "outdoor",
+          "lat": 51.7659,
+          "lon": -1.25682,
+          "name": "Oxford"
+        },
+        "private": "false",
+        "status": "frozen",
+        "title": "Temperature",
+        "updated": "2010-06-08T14:21:37.333728Z",
+        "version": "1.0.0"
+      },
+      {
+        "created": "2013-11-02T11:52:25.108931Z",
+        "creator": "https://xively.com/users/floppy",
+        "datastreams": [
+          {
+            "at": "2013-11-02T15:19:56.000000Z",
+            "current_value": "170",
+            "id": "sensor1",
+            "max_value": "254.0",
+            "min_value": "0.0",
+            "unit": {
+              "label": "cm",
+              "symbol": "cm"
+            }
+          }
+        ],
+        "feed": "https://api.xively.com/v2/feeds/257881106.json",
+        "id": 257881106,
+        "location": {
+          "domain": "physical",
+          "lat": 51.772222,
+          "lon": -1.289722
+        },
+        "private": "false",
+        "status": "live",
+        "tags": [
+          "oxflood"
+        ],
+        "title": "Sensor Pi Test",
+        "updated": "2013-11-02T15:20:33.314711Z",
+        "version": "1.0.0"
+      },
+      {
+        "created": "2010-02-15T22:45:29.790223Z",
+        "creator": "https://xively.com/users/andrewgodwin",
+        "datastreams": [
+          {
+            "current_value": "17.99",
+            "id": "0",
+            "max_value": "34.57",
+            "min_value": "17.9",
+            "tags": [
+              "temperature"
+            ],
+            "unit": {
+              "label": "Celsius",
+              "symbol": "\u00b0C",
+              "type": "derivedSI"
+            }
+          }
+        ],
+        "description": "Feeds from our garage at home.",
+        "feed": "https://api.xively.com/v2/feeds/5693.json",
+        "id": 5693,
+        "location": {
+          "disposition": "fixed",
+          "domain": "physical",
+          "exposure": "indoor",
+          "lat": 51.7537087481918,
+          "lon": -1.27930641174316
+        },
+        "private": "false",
+        "status": "frozen",
+        "title": "Garage Info",
+        "updated": "2010-06-08T14:21:04.052144Z",
+        "version": "1.0.0"
+      },
+      {
+        "created": "2013-05-14T19:04:47.699396Z",
+        "creator": "https://xively.com/users/demo_user_account",
+        "datastreams": [
+          {
+            "at": "2013-05-14T19:04:47.699396Z",
+            "id": "temperature",
+            "unit": {
+              "symbol": "C"
+            }
+          }
+        ],
+        "feed": "https://api.xively.com/v2/feeds/553577820.json",
+        "id": 553577820,
+        "location": {
+          "domain": "physical",
+          "lat": 51.7520209,
+          "lon": -1.25772630000006,
+          "name": "Barn"
+        },
+        "private": "false",
+        "status": "frozen",
+        "title": "Demo",
+        "updated": "2013-06-18T19:18:53.449640Z",
+        "version": "1.0.0"
+      },
+      {
+        "created": "2013-05-14T12:47:55.720692Z",
+        "creator": "https://xively.com/users/breakspear",
+        "datastreams": [
+          {
+            "at": "2013-06-19T09:26:10.828163Z",
+            "current_value": "25.37",
+            "id": "temperature",
+            "max_value": "27.0",
+            "min_value": "0.0",
+            "unit": {
+              "label": "Celsius",
+              "symbol": "C"
+            }
+          }
+        ],
+        "feed": "https://api.xively.com/v2/feeds/1960162689.json",
+        "id": 1960162689,
+        "location": {
+          "domain": "physical",
+          "lat": 51.7527257789055,
+          "lon": -1.24999523162842,
+          "name": "St Edmund Hall: IT Office"
+        },
+        "private": "false",
+        "status": "frozen",
+        "title": "IT Office Temperature",
+        "updated": "2013-06-19T09:26:10.880833Z",
+        "version": "1.0.0"
+      },
+      {
+        "created": "2013-05-15T07:41:14.736493Z",
+        "creator": "https://xively.com/users/breakspear",
+        "datastreams": [
+          {
+            "at": "2013-11-02T15:20:29.143815Z",
+            "current_value": "31.62",
+            "id": "temperature",
+            "max_value": "41.06",
+            "min_value": "0.0",
+            "unit": {
+              "label": "Celsius",
+              "symbol": "C"
+            }
+          }
+        ],
+        "feed": "https://api.xively.com/v2/feeds/336217921.json",
+        "id": 336217921,
+        "location": {
+          "domain": "physical",
+          "lat": 51.7526195106741,
+          "lon": -1.24973773956299,
+          "name": "St Edmund Hall: Whitehall Server Room"
+        },
+        "private": "false",
+        "status": "live",
+        "title": "Whitehall Server Room",
+        "updated": "2013-11-02T15:20:29.287091Z",
+        "version": "1.0.0"
+      },
+      {
+        "created": "2012-11-26T21:50:22.512571Z",
+        "creator": "https://xively.com/users/crouchingbadger",
+        "datastreams": [
+          {
+            "at": "2012-11-26T21:52:56.419571Z",
+            "current_value": "2.07",
+            "id": "FloodRisk",
+            "max_value": "2.07",
+            "min_value": "2.07",
+            "tags": [
+              "flood",
+              "level",
+              "water"
+            ],
+            "unit": {
+              "label": "m"
+            }
+          },
+          {
+            "at": "2013-11-02T15:20:14.612744Z",
+            "current_value": "2.08",
+            "id": "Level",
+            "max_value": "2.72",
+            "min_value": "1.63",
+            "tags": [
+              "flood",
+              "level",
+              "water"
+            ],
+            "unit": {
+              "label": "Metre",
+              "symbol": "m",
+              "type": "basicSI"
+            }
+          }
+        ],
+        "feed": "https://api.xively.com/v2/feeds/88610.json",
+        "id": 88610,
+        "location": {
+          "disposition": "fixed",
+          "domain": "physical",
+          "exposure": "outdoor",
+          "lat": 51.7563042159367,
+          "lon": -1.2388801574707,
+          "name": "Oxford: Cherwell - Upstream at Kings Mill"
+        },
+        "private": "false",
+        "status": "live",
+        "tags": [
+          "flooding",
+          "river",
+          "water"
+        ],
+        "title": "Oxford: Cherwell - Upstream at Kings Mill",
+        "updated": "2013-11-02T15:20:15.696982Z",
+        "version": "1.0.0",
+        "website": "http://www.environment-agency.gov.uk/homeandleisure/floods/riverlevels/136497.aspx?stationId=7071"
+      },
+      {
+        "created": "2012-11-26T21:39:51.622330Z",
+        "creator": "https://xively.com/users/crouchingbadger",
+        "datastreams": [
+          {
+            "at": "2012-11-26T21:41:31.526917Z",
+            "current_value": "0.9",
+            "id": "FloodRisk",
+            "max_value": "0.9",
+            "min_value": "0.9",
+            "tags": [
+              "flood",
+              "level",
+              "water"
+            ],
+            "unit": {
+              "label": "m"
+            }
+          },
+          {
+            "at": "2013-11-02T15:20:08.950913Z",
+            "current_value": "0.02",
+            "id": "Level",
+            "max_value": "0.17",
+            "min_value": "0.0",
+            "tags": [
+              "flood",
+              "level",
+              "water"
+            ],
+            "unit": {
+              "label": "Metre",
+              "symbol": "m",
+              "type": "basicSI"
+            }
+          }
+        ],
+        "feed": "https://api.xively.com/v2/feeds/88605.json",
+        "id": 88605,
+        "location": {
+          "disposition": "fixed",
+          "domain": "physical",
+          "exposure": "outdoor",
+          "lat": 51.7513230184425,
+          "lon": -1.27241849899292,
+          "name": "Oxford: Thames - Upstream at Osney Lock"
+        },
+        "private": "false",
+        "status": "live",
+        "tags": [
+          "flood",
+          "river",
+          "water"
+        ],
+        "title": "Oxford: Thames - Upstream at Osney Lock",
+        "updated": "2013-11-02T15:20:09.002154Z",
+        "version": "1.0.0",
+        "website": "http://www.environment-agency.gov.uk/homeandleisure/floods/riverlevels/136495.aspx?stationId=7076"
+      },
+      {
+        "created": "2012-11-26T21:34:12.179239Z",
+        "creator": "https://xively.com/users/crouchingbadger",
+        "datastreams": [
+          {
+            "at": "2012-11-26T21:38:29.974009Z",
+            "current_value": "1.9",
+            "id": "FloodRisk",
+            "max_value": "1.9",
+            "min_value": "1.9",
+            "tags": [
+              "flood",
+              "level",
+              "water"
+            ],
+            "unit": {
+              "label": "m"
+            }
+          },
+          {
+            "at": "2013-11-02T15:20:06.032286Z",
+            "current_value": "0.98",
+            "id": "Level",
+            "max_value": "2.6",
+            "min_value": "0.8",
+            "tags": [
+              "flood",
+              "level",
+              "water"
+            ],
+            "unit": {
+              "label": "Metre",
+              "symbol": "m",
+              "type": "basicSI"
+            }
+          }
+        ],
+        "feed": "https://api.xively.com/v2/feeds/88603.json",
+        "id": 88603,
+        "location": {
+          "disposition": "fixed",
+          "domain": "physical",
+          "exposure": "outdoor",
+          "lat": 51.7521625492412,
+          "lon": -1.28145217895508,
+          "name": "Oxford: Bulstake Stream at New Botley"
+        },
+        "private": "false",
+        "status": "live",
+        "tags": [
+          "flooding",
+          "water"
+        ],
+        "title": "Oxford: Bulstake Stream at New Botley",
+        "updated": "2013-11-02T15:20:06.117444Z",
+        "version": "1.0.0",
+        "website": "http://www.environment-agency.gov.uk/homeandleisure/floods/riverlevels/136495.aspx?stationId=7075"
+      },
+      {
+        "created": "2012-11-26T17:33:47.525870Z",
+        "creator": "https://xively.com/users/crouchingbadger",
+        "datastreams": [
+          {
+            "at": "2012-11-26T19:21:36.009543Z",
+            "current_value": "1.87",
+            "id": "FloodRisk",
+            "max_value": "1.87",
+            "min_value": "1.87",
+            "tags": [
+              "flood",
+              "level",
+              "water"
+            ],
+            "unit": {
+              "label": "m"
+            }
+          },
+          {
+            "at": "2013-11-02T15:20:03.093415Z",
+            "current_value": "1.05",
+            "id": "Level",
+            "max_value": "2.92",
+            "min_value": "0.1",
+            "tags": [
+              "flood",
+              "level",
+              "water"
+            ],
+            "unit": {
+              "label": "Metre",
+              "symbol": "m",
+              "type": "basicSI"
+            }
+          }
+        ],
+        "feed": "https://api.xively.com/v2/feeds/88571.json",
+        "id": 88571,
+        "location": {
+          "disposition": "fixed",
+          "domain": "physical",
+          "exposure": "outdoor",
+          "lat": 51.7524866750333,
+          "lon": -1.29076480865479,
+          "name": "Seacourt Stream at Minns Estate"
+        },
+        "private": "false",
+        "status": "live",
+        "tags": [
+          "flood",
+          "level",
+          "river"
+        ],
+        "title": "Oxford: Seacourt Stream at Minns Estate",
+        "updated": "2013-11-02T15:20:03.192623Z",
+        "version": "1.0.0",
+        "website": "http://www.environment-agency.gov.uk/homeandleisure/floods/riverlevels/136495.aspx?stationId=7074"
+      },
+      {
+        "created": "2012-08-26T20:14:08.241193Z",
+        "creator": "https://xively.com/users/flexibity",
+        "datastreams": [
+          {
+            "at": "2012-11-25T20:09:47.106592Z",
+            "current_value": "56.45",
+            "id": "humidity",
+            "max_value": "74.48",
+            "min_value": "44.65",
+            "tags": [
+              "humidity"
+            ],
+            "unit": {
+              "label": "percent",
+              "symbol": "%"
+            }
+          },
+          {
+            "at": "2012-11-25T20:09:47.106592Z",
+            "current_value": "1196.29",
+            "id": "pressure",
+            "max_value": "10216.23",
+            "min_value": "1182.31",
+            "tags": [
+              "atmospheric pressure"
+            ],
+            "unit": {
+              "label": "millibar",
+              "symbol": "mbar"
+            }
+          },
+          {
+            "at": "2012-11-25T20:09:47.106592Z",
+            "current_value": "23.7",
+            "id": "temperature",
+            "max_value": "27.26",
+            "min_value": "16.29",
+            "tags": [
+              "temperature"
+            ],
+            "unit": {
+              "label": "degree",
+              "symbol": "C"
+            }
+          }
+        ],
+        "description": "Flexibity THAP sensor in my bedroom",
+        "feed": "https://api.xively.com/v2/feeds/72697.json",
+        "id": 72697,
+        "location": {
+          "disposition": "fixed",
+          "domain": "physical",
+          "exposure": "indoor",
+          "lat": 51.7469283986406,
+          "lon": -1.2359619140625
+        },
+        "private": "false",
+        "status": "frozen",
+        "tags": [
+          "atmospheric pressure",
+          "flexibity",
+          "humidity",
+          "temperature",
+          "thap"
+        ],
+        "title": "My Bedroom",
+        "updated": "2012-11-25T20:09:47.472280Z",
+        "version": "1.0.0",
+        "website": "http://www.flexibity.com"
+      },
+      {
+        "created": "2008-11-18T01:27:06.317925Z",
+        "creator": "https://xively.com/users/crouchingbadger",
+        "datastreams": [
+          {
+            "at": "2013-11-02T15:17:20.146269Z",
+            "current_value": "650.82",
+            "id": "0",
+            "max_value": "6725.64",
+            "min_value": "151.45",
+            "tags": [
+              "power"
+            ],
+            "unit": {
+              "label": "Watts",
+              "symbol": "W"
+            }
+          },
+          {
+            "at": "2013-11-02T15:17:20.146269Z",
+            "current_value": "24.6",
+            "id": "1",
+            "max_value": "39.2",
+            "min_value": "17.2",
+            "tags": [
+              "temperature"
+            ],
+            "unit": {
+              "label": "Degrees C",
+              "symbol": "C"
+            }
+          }
+        ],
+        "description": "Output from currentcost meter in Badger Towers.  Twitter: @crouchingbadger\r\n\r\nSee the website for  a vision of a micro-generation future.",
+        "feed": "https://api.xively.com/v2/feeds/1202.json",
+        "id": 1202,
+        "location": {
+          "disposition": "fixed",
+          "domain": "physical",
+          "exposure": "indoor",
+          "lat": 51.7422961316118,
+          "lon": -1.25754833221436,
+          "name": "Grandpont, Oxfordshire"
+        },
+        "private": "false",
+        "status": "live",
+        "title": "Badgerpower",
+        "updated": "2013-11-02T15:17:20.194620Z",
+        "version": "1.0.0",
+        "website": "http://www.crouchingbadger.com/post/78800733/weasel-shit-for-fun-profit"
+      },
+      {
+        "auto_feed_url": "http://apps.pachube.com/amee/8EA6A1B3F151/w/1202/0",
+        "created": "2009-02-11T11:25:40.393065Z",
+        "creator": "https://xively.com/users/crouchingbadger",
+        "datastreams": [
+          {
+            "at": "2012-02-02T01:36:40.893366Z",
+            "current_value": "0.038",
+            "id": "0",
+            "max_value": "0.68",
+            "min_value": "0.0",
+            "tags": [
+              "CO2_last_15_mins"
+            ],
+            "unit": {
+              "label": "kilograms",
+              "symbol": "kg",
+              "type": "basicSI"
+            }
+          },
+          {
+            "at": "2012-02-02T01:36:40.893366Z",
+            "current_value": "0.154",
+            "id": "1",
+            "max_value": "2.718",
+            "min_value": "0.0",
+            "tags": [
+              "CO2_last_60_mins"
+            ],
+            "unit": {
+              "label": "kilograms",
+              "symbol": "kg",
+              "type": "basicSI"
+            }
+          },
+          {
+            "at": "2012-02-02T01:36:40.893366Z",
+            "current_value": "3.740",
+            "id": "2",
+            "max_value": "29.126",
+            "min_value": "0.0",
+            "tags": [
+              "CO2_last_24_hrs"
+            ],
+            "unit": {
+              "label": "kilograms",
+              "symbol": "kg",
+              "type": "basicSI"
+            }
+          }
+        ],
+        "description": "Carbon Footprint of Currentcost feed",
+        "feed": "https://api.xively.com/v2/feeds/1398.json",
+        "id": 1398,
+        "location": {
+          "disposition": "fixed",
+          "domain": "virtual",
+          "exposure": "indoor",
+          "lat": 51.742336876891,
+          "lon": -1.25694751739502,
+          "name": "OX1 4PJ"
+        },
+        "private": "false",
+        "status": "frozen",
+        "title": "Badgerpower Carbon Footprint",
+        "updated": "2012-02-02T01:36:40.929929Z",
+        "version": "1.0.0"
+      },
+      {
+        "created": "2013-02-17T22:04:32.393105Z",
+        "creator": "https://xively.com/users/biogoo",
+        "datastreams": [
+          {
+            "id": "number"
+          },
+          {
+            "at": "2013-02-23T22:36:25.325731Z",
+            "current_value": "0.00",
+            "id": "voltage",
+            "max_value": "1.77",
+            "min_value": "0.0",
+            "unit": {
+              "label": "Volt",
+              "symbol": "V"
+            }
+          }
+        ],
+        "feed": "https://api.xively.com/v2/feeds/105225.json",
+        "id": 105225,
+        "location": {
+          "disposition": "fixed",
+          "domain": "physical",
+          "exposure": "indoor",
+          "lat": 51.742336876891,
+          "lon": -1.27716064453125
+        },
+        "private": "false",
+        "status": "frozen",
+        "tags": [
+          "gsiot"
+        ],
+        "title": "MG feed 1",
+        "updated": "2013-02-23T22:36:25.622642Z",
+        "version": "1.0.0"
+      },
+      {
+        "auto_feed_url": "http://apps.pachube.com/amee/33201A2148D5/w/1202/1",
+        "created": "2012-05-08T17:23:00.920834Z",
+        "creator": "https://xively.com/users/crouchingbadger",
+        "feed": "https://api.xively.com/v2/feeds/58614.json",
+        "id": 58614,
+        "location": {
+          "disposition": "fixed",
+          "domain": "physical",
+          "exposure": "indoor",
+          "lat": 51.7416991170955,
+          "lon": -1.2553596496582,
+          "name": "Oxford, Uk"
+        },
+        "private": "false",
+        "status": "frozen",
+        "title": "Carbon Part 2",
+        "updated": "2012-05-08T17:25:14.330290Z",
+        "version": "1.0.0"
+      },
+      {
+        "created": "2011-11-21T22:04:03.728810Z",
+        "creator": "https://xively.com/users/noodlesuk",
+        "datastreams": [
+          {
+            "at": "2011-11-21T22:04:03.705622Z",
+            "id": "Humidity",
+            "unit": {
+              "label": "%"
+            }
+          },
+          {
+            "at": "2011-11-21T22:04:03.705622Z",
+            "id": "Pressure",
+            "unit": {
+              "label": "Pa"
+            }
+          },
+          {
+            "at": "2011-11-21T22:04:03.705622Z",
+            "id": "Temperature",
+            "unit": {
+              "label": "Deg C"
+            }
+          }
+        ],
+        "feed": "https://api.xively.com/v2/feeds/40159.json",
+        "id": 40159,
+        "location": {
+          "domain": "physical",
+          "exposure": "indoor",
+          "lat": 51.7449143976803,
+          "lon": -1.29020690917969,
+          "name": "Botley, Oxfordshire"
+        },
+        "private": "false",
+        "status": "frozen",
+        "title": "Weather Station",
+        "updated": "2011-11-21T22:04:03.728810Z",
+        "version": "1.0.0"
+      },
+      {
+        "created": "2012-11-26T21:42:46.498677Z",
+        "creator": "https://xively.com/users/crouchingbadger",
+        "datastreams": [
+          {
+            "at": "2012-11-26T21:44:06.631759Z",
+            "current_value": "1.19",
+            "id": "FloodRisk",
+            "max_value": "1.19",
+            "min_value": "1.19",
+            "tags": [
+              "flood",
+              "level",
+              "water"
+            ],
+            "unit": {
+              "label": "m"
+            }
+          },
+          {
+            "at": "2013-11-02T15:20:11.780637Z",
+            "current_value": "0.9",
+            "id": "Level",
+            "max_value": "2.55",
+            "min_value": "0.73",
+            "tags": [
+              "flood",
+              "level",
+              "water"
+            ],
+            "unit": {
+              "label": "Metre",
+              "symbol": "m",
+              "type": "basicSI"
+            }
+          }
+        ],
+        "feed": "https://api.xively.com/v2/feeds/88607.json",
+        "id": 88607,
+        "location": {
+          "disposition": "fixed",
+          "domain": "physical",
+          "exposure": "outdoor",
+          "lat": 51.7317887678194,
+          "lon": -1.25270962715149,
+          "name": "Oxford: Hinksey Stream at Cold Harbour"
+        },
+        "private": "false",
+        "status": "live",
+        "tags": [
+          "flood",
+          "river",
+          "water"
+        ],
+        "title": "Oxford: Hinksey Stream at Cold Harbour",
+        "updated": "2013-11-02T15:20:11.839864Z",
+        "version": "1.0.0",
+        "website": "http://www.environment-agency.gov.uk/homeandleisure/floods/riverlevels/136495.aspx?stationId=7076"
+      },
+      {
+        "created": "2012-11-26T21:53:52.130271Z",
+        "creator": "https://xively.com/users/crouchingbadger",
+        "datastreams": [
+          {
+            "at": "2012-11-26T22:03:37.673672Z",
+            "current_value": "0.22",
+            "id": "FloodRisk",
+            "max_value": "0.22",
+            "min_value": "0.22",
+            "tags": [
+              "flood",
+              "level",
+              "water"
+            ],
+            "unit": {
+              "label": "m"
+            }
+          },
+          {
+            "at": "2013-11-02T15:20:18.542604Z",
+            "current_value": "0.06",
+            "id": "Level",
+            "max_value": "0.81",
+            "min_value": "0.0",
+            "tags": [
+              "flood",
+              "level",
+              "water"
+            ],
+            "unit": {
+              "label": "Metre",
+              "symbol": "m",
+              "type": "basicSI"
+            }
+          }
+        ],
+        "feed": "https://api.xively.com/v2/feeds/88611.json",
+        "id": 88611,
+        "location": {
+          "disposition": "fixed",
+          "domain": "physical",
+          "exposure": "outdoor",
+          "lat": 51.7298431186909,
+          "lon": -1.24016761779785,
+          "name": "Oxford: Thames - Upstream at Iffley Lock"
+        },
+        "private": "false",
+        "status": "live",
+        "tags": [
+          "flood",
+          "river",
+          "water"
+        ],
+        "title": "Oxford: Thames - Upstream at Iffley Lock",
+        "updated": "2013-11-02T15:20:18.584070Z",
+        "version": "1.0.0",
+        "website": "http://www.environment-agency.gov.uk/homeandleisure/floods/riverlevels/136497.aspx?stationId=7072"
+      },
+      {
+        "created": "2012-11-26T22:05:31.355872Z",
+        "creator": "https://xively.com/users/crouchingbadger",
+        "datastreams": [
+          {
+            "at": "2012-11-26T22:06:47.597811Z",
+            "current_value": "2.64",
+            "id": "FloodRisk",
+            "max_value": "2.64",
+            "min_value": "2.64",
+            "tags": [
+              "flood",
+              "level",
+              "water"
+            ],
+            "unit": {
+              "label": "m"
+            }
+          },
+          {
+            "at": "2013-11-02T15:20:21.326790Z",
+            "current_value": "2.36",
+            "id": "Level",
+            "max_value": "3.55",
+            "min_value": "2.11",
+            "unit": {
+              "label": "Metre",
+              "symbol": "m",
+              "type": "basicSI"
+            }
+          }
+        ],
+        "feed": "https://api.xively.com/v2/feeds/88615.json",
+        "id": 88615,
+        "location": {
+          "disposition": "fixed",
+          "domain": "physical",
+          "ele": "51.514",
+          "exposure": "outdoor",
+          "lat": 51.7282562351604,
+          "lon": -1.2403392791748,
+          "name": "Oxford: Thames - Downstream at Iffley Lock"
+        },
+        "private": "false",
+        "status": "live",
+        "tags": [
+          "flooding",
+          "river",
+          "water"
+        ],
+        "title": "Oxford: Thames - Downstream at Iffley Lock",
+        "updated": "2013-11-02T15:20:21.402052Z",
+        "version": "1.0.0",
+        "website": "http://www.environment-agency.gov.uk/homeandleisure/floods/riverlevels/136497.aspx?StationId=7072&Sensor=D&RegionId=0&AreaId=0&CatchmentId=0"
+      },
+      {
+        "created": "2013-01-25T19:45:10.061756Z",
+        "creator": "https://xively.com/users/hagai",
+        "datastreams": [
+          {
+            "at": "2013-07-19T07:48:19.867198Z",
+            "current_value": "23.313",
+            "id": "104938A501080057",
+            "max_value": "27.563",
+            "min_value": "12.938",
+            "tags": [
+              "Indoors"
+            ],
+            "unit": {
+              "symbol": "\u00b0C"
+            }
+          },
+          {
+            "at": "2013-07-19T07:48:19.867198Z",
+            "current_value": "20.313",
+            "id": "28DA3E95040000CD",
+            "max_value": "32.25",
+            "min_value": "2.875",
+            "tags": [
+              "Outdoors"
+            ],
+            "unit": {
+              "symbol": "\u00b0C"
+            }
+          }
+        ],
+        "email": "hagai.shatz@gmail.com",
+        "feed": "https://api.xively.com/v2/feeds/100389.json",
+        "id": 100389,
+        "location": {
+          "domain": "physical",
+          "lat": 51.7416991170955,
+          "lon": -1.19922637939453,
+          "name": "Oxford"
+        },
+        "private": "false",
+        "status": "frozen",
+        "title": "Temperatures",
+        "updated": "2013-07-19T07:48:19.941530Z",
+        "version": "1.0.0",
+        "website": "http://myarduinotoy.blogspot.co.uk/"
+      }
+    ],
+    "startIndex": 0,
+    "totalResults": 20
+}
