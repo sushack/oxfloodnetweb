@@ -194,6 +194,7 @@
             "gradient": options.gradient,
             "debug": options.debug
         });
+
         // padding
         var pad = new L.Point(radiusValue, radiusValue);
         nwPoint = nwPoint.subtract(pad);
