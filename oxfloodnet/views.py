@@ -13,13 +13,30 @@ def index():
     """
     return flask.render_template('index.html')
 
+@oxfloodnet.route('/test/boundingbox/<centre>/<sw>/<ne>')
+def return_request(**kwargs):
+    """
+    Return JSON data based on bounding box
+    """
+    request = dict([(i,calc.parse_latlon(j)) for (i,j) in kwargs.items()])
+    return flask.json.jsonify(request = request)
+
 @oxfloodnet.route('/data/<centre>/<sw>/<ne>')
 def return_data(**kwargs):
     """
     Return JSON data based on bounding box
     """
     request = dict([(i,calc.parse_latlon(j)) for (i,j) in kwargs.items()])
-    return flask.json.jsonify(request = request)
+    return flask.json.jsonify(request = request, data = {})
+
+@oxfloodnet.route('/test/distance/<a>/<b>')
+def return_a_to_b(**kwargs):
+    """
+    Return JSON data giving a distance between two points
+    """
+    request = dict([(i,calc.parse_latlon(j)) for (i,j) in kwargs.items()])
+    distance = calc.haversine(request['a'][1], request['a'][0], request['b'][1], request['b'][0])
+    return flask.json.jsonify(request = request, distance = distance)
 
 @oxfloodnet.errorhandler(calc.MalformedLatLon)
 def handle_invalid_latlon(error):
