@@ -74,7 +74,6 @@ var send_location = function (map) {
         url: url
     }).done(function (data){
         generate_heatmap(map, data.data);
-        console.log(data.data);
     });
 };
 get_location();
