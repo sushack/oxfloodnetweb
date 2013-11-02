@@ -1,0 +1,42 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: Helvetica, Arial, sans-serif;
+}
+html, body, #map {
+    height: 100%;
+}
+#map {
+    margin-top: 40px;
+}
+.navbar {
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    right: 0;
+    height: 40px;
+    background-color: #fff;
+    border-bottom: 1px solid #000;
+    padding: 20px;
+
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.navbar form,
+.geolocation .navbar .non-geo-switch {
+    display: block;
+}
+.geolocation .navbar form,
+.navbar .non-geo-switch {
+    display: none;
+}
+
+.leaflet-map-pane {
+    z-index: 2 !important;
+}
+
+.leaflet-google-layer {
+    z-index: 1 !important;
+}
