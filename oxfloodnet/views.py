@@ -32,6 +32,7 @@ def return_data(**kwargs):
             request['ne']
         ),
         'api_key': oxfloodnet.config['FLOOD_DATA_API_KEY'],
+        'tag': 'oxflood',
     }
     s = requests.Session()
     s.mount('http://', CachingHTTPAdapter())
