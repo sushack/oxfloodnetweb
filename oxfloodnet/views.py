@@ -4,8 +4,7 @@
 # Routing for oxfloodnet
 
 import flask
-from oxfloodnet import oxfloodnet
-from oxfloodnet import parse
+from oxfloodnet import oxfloodnet, calc
 
 @oxfloodnet.route('/')
 def index():
@@ -15,13 +14,14 @@ def index():
     return flask.render_template('index.html')
 
 @oxfloodnet.route('/data/<centre>/<sw>/<ne>')
-def return_data(centre, sw, ne):
+def return_data(**kwargs):
     """
     Return JSON data based on bounding box
     """
-    return flask.json.jsonify(request = {'centre': parse.parse_latlon(centre), 'sw': parse.parse_latlon(sw), 'ne': parse.parse_latlon(ne)})
+    request = dict([(i,calc.parse_latlon(j)) for (i,j) in kwargs.items()])
+    return flask.json.jsonify(request = request)
 
-@oxfloodnet.errorhandler(parse.MalformedLatLon)
+@oxfloodnet.errorhandler(calc.MalformedLatLon)
 def handle_invalid_latlon(error):
     """
     Handle a badly formatted lat/lon comma-separated pair
