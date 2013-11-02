@@ -3,7 +3,7 @@
 #
 # Routing for oxfloodnet
 
-from flask import render_template, json
+import flask
 from oxfloodnet import oxfloodnet
 
 @oxfloodnet.route('/')
@@ -11,11 +11,11 @@ def index():
     """
     Return index HTML for human beings
     """
-    return render_template('index.html')
+    return flask.render_template('index.html')
 
-@oxfloodnet.route('/data/<ne>/<sw>')
+@oxfloodnet.route('/data/<sw>/<ne>')
 def return_data(ne, sw):
     """
     Return JSON data based on bounding box
     """
-    return json.jsonify(request = {'ne':ne,'sw':sw})
+    return flask.json.jsonify(request = {'sw':sw,'ne':ne})
