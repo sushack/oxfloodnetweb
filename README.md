@@ -22,3 +22,10 @@ python server.py
 ```
 
 Now you can view the web interface by visiting http://localhost:5000.
+
+
+## Todo:
+
+- Finish the reverse Geo lookup from Postcode stuff
+- Get a scalable/sustainable database source
+- Add information about each sensor to the display when tapping an icon
