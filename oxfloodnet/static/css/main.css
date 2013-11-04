@@ -11,7 +11,7 @@ body {
     background-position: 50% 50%;
     background-repeat: no-repeat;
 }
-.navbar {
+.status-bar {
     position: fixed;
     z-index: 10000;
     top: 0;
@@ -27,13 +27,10 @@ body {
     -webkit-box-shadow: 0 0 10px rgba(0,0,0,.4);
     box-shadow: 0 0 10px rgba(0,0,0,.4);
 }
-.navbar a {
-    text-decoration: none;
-    color: #36c;
-    font-size: 12px;
-}
-.status {
+.status-message {
     display: none;
+    color: #aaa;
+    font-size: 12px;
 }
 .error {
     color: #d11;
@@ -41,29 +38,6 @@ body {
 .success {
     color: #1d1;
 }
-.navbar form,
-.geolocation .navbar .non-geo-switch {
-    display: block;
-}
-.geolocation .navbar form,
-.navbar .non-geo-switch {
-    display: none;
-}
-.navbar form a {
-    display: inline-block;
-    width: 16px;
-    height: 16px;
-    text-align: center;
-    line-height: 16px;
-    font-size: 12px;
-    background-color: #eee;
-    font-weight: bold;
-
-    -moz-border-radius: 100%;
-    -webkit-border-radius: 100%;
-    border-radius: 100%;
-}
-
 .leaflet-map-pane {
     z-index: 2 !important;
 }

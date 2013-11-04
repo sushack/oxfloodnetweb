@@ -1,11 +1,14 @@
 {% extends 'base.html' %}
 
 {% block body %}
-<div class="navbar">
-    <span class="status error">
+<div class="status-bar">
+	<span class="status-message loading">
+		Getting your location...
+	</span>
+    <span class="status-message error">
         Could not get location!
     </span>
-    <span class="status success">
+    <span class="status-message success">
         Got your location!
     </span>
 </div>

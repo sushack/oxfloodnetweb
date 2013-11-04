@@ -7,7 +7,8 @@ var core = core || {};
     var google_maps_layer = null;
 
     var handle_location_error = function () {
-        $('.status.error').show();
+        $('.status-message').hide();
+        $('.status-message.error').show();
     };
 
 
@@ -26,7 +27,8 @@ var core = core || {};
 
 
     var initialise_map = function (location) {
-        $('.status.success').show();
+        $('.status-message').hide();
+        $('.status-message.success').show();
 
         var latlon = [location.coords.latitude, location.coords.longitude];
         var map = L.map('map', {
@@ -73,6 +75,7 @@ var core = core || {};
 
 
     module.init = function () {
+        $('.status-message.loading').show();
         if (Modernizr.geolocation) {
             navigator.geolocation.getCurrentPosition(
                 initialise_map,
