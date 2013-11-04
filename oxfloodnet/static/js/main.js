@@ -3,6 +3,9 @@ var core = core || {};
 
 (function(module){
     'use strict';
+
+    var google_maps_layer = null;
+
     var handle_location_error = function () {
         $('.status.error').show();
     };
@@ -40,8 +43,8 @@ var core = core || {};
     var update_map = function (map, data) {
         data = data || null;
 
-        var google_maps_layer = new L.Google('TERRAIN');
-        if (!map.hasLayer(google_maps_layer)) {
+        if(!google_maps_layer) {
+            google_maps_layer = new L.Google('TERRAIN');
             map.addLayer(google_maps_layer);
         }
 
